@@ -1,10 +1,10 @@
-//David Cyril
+//Penuel
 const fs = require("fs-extra");
 if (fs.existsSync(".env"))
   require("dotenv").config({ path: __dirname + "/.env" });
 
 //=======[dependencies]====================//
-global.SESSION_ID = process.env.SESSION_ID || "";
+global.SESSION_ID = process.env.SESSION_ID || "eyJub2lzZUtleSI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiMktjYXY3WGp4V2I5d000enA2d0xiOXVzSWl0ME9vRzNYWndPQWZLaGVFWT0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiQlByd2F3Q2Q5Q2ovQUExYXVNb0xPZGc1NHFJM09KWDJrQUtENXM5aW9Xaz0ifX0sInBhaXJpbmdFcGhlbWVyYWxLZXlQYWlyIjp7InByaXZhdGUiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJjTzlXOEhaOVBkS2VkSkx6ZzNKZUdaYWg5TmNMMG9Zd3hHQWFvYnVNSG1RPSJ9LCJwdWJsaWMiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJPKzd3V09VazFMRDNHV2paK2pPSlJIaHhFSTRiMXpGclEzYzRONWlIc1hzPSJ9fSwic2lnbmVkSWRlbnRpdHlLZXkiOnsicHJpdmF0ZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6ImlEYk1XOTVQR2I0NFZpNFlwZG5XKytEQkRFYkRUa01QSHlYVTgzK0dOR1U9In0sInB1YmxpYyI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IkdoYko2aFZ1L2gyelR4dkRONUJLa1FGTDY0bnBzbkEreGNJMEhieHFaSGc9In19LCJzaWduZWRQcmVLZXkiOnsia2V5UGFpciI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiR0dzNFQ1N3B6ZXhKZU5jTnBoRjF3RlZGc01zOSt2SndtT0JHQ2Q1N0Zudz0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiUk9jcGRGakppR2NDc05hQzU0REowcXg2R2FMcHdFSWMxY1NDV2pqSnlROD0ifX0sInNpZ25hdHVyZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6ImU5TzJuckdYSlpCemM3L2lOQkxGc3VsdUoyZFBWVWxwQm52TzU1QnJDaEJjNFJKUWhKL3BLQzkzMEMzUzNub2J3b3orT2tDRkdXTnkyWnZxVk5SVWlBPT0ifSwia2V5SWQiOjF9LCJyZWdpc3RyYXRpb25JZCI6NTcsImFkdlNlY3JldEtleSI6InU0RUQvRnZUVEhPc0FjaUFmbnJhZUdRRXJtamRnemxpazZiU0pERmpIK2c9IiwicHJvY2Vzc2VkSGlzdG9yeU1lc3NhZ2VzIjpbXSwibmV4dFByZUtleUlkIjozMSwiZmlyc3RVbnVwbG9hZGVkUHJlS2V5SWQiOjMxLCJhY2NvdW50U3luY0NvdW50ZXIiOjAsImFjY291bnRTZXR0aW5ncyI6eyJ1bmFyY2hpdmVDaGF0cyI6ZmFsc2V9LCJkZXZpY2VJZCI6Imswanl3R245UjNxR0hIZ1ZzT2tMLWciLCJwaG9uZUlkIjoiNzM4ZjlkOTUtMTFhYi00ODc4LTgzMTctY2FkOWMzMzAxZDA0IiwiaWRlbnRpdHlJZCI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6Im1JdUpTYzBUWWxLVTNvZmNaQ2doYVIvS1hIaz0ifSwicmVnaXN0ZXJlZCI6dHJ1ZSwiYmFja3VwVG9rZW4iOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiI5MmRHM2YxRDNZYjUyektiVFZkeTQwd2FOS1U9In0sInJlZ2lzdHJhdGlvbiI6e30sInBhaXJpbmdDb2RlIjoiTllUTVlFV04iLCJtZSI6eyJpZCI6IjI1NDc1OTQzMzUzMToxOUBzLndoYXRzYXBwLm5ldCJ9LCJhY2NvdW50Ijp7ImRldGFpbHMiOiJDT0R1K29jR0VQRHFqTFFHR0JVZ0FDZ0EiLCJhY2NvdW50U2lnbmF0dXJlS2V5IjoiREs4Yy9qZHphVE45N0x4R2FhODdDajVqYTRRSlhZMmIvRnhIWTdpN3VXRT0iLCJhY2NvdW50U2lnbmF0dXJlIjoiUWpWRDg5blZOS1pzTXh1YkR0VENMemgwN2t6K0o5Y0JyNW9aTElIVjZlSW56OS82aXAzOFdVSVl2UDZURjJSQVR5NHNhVGNtMktNMjRaWjVuVlc4Qmc9PSIsImRldmljZVNpZ25hdHVyZSI6IkRpNkR4UkNOODQyM3J0eEpHVE1tN1hFQlVaMUcwMmtMTXVSVTVJRXZkdXgrZFVPTFJjK0c1Nnp1L2ppQmFjZnJock40NzBVU01TL2Q4NG9NOEFtcGlBPT0ifSwic2lnbmFsSWRlbnRpdGllcyI6W3siaWRlbnRpZmllciI6eyJuYW1lIjoiMjU0NzU5NDMzNTMxOjE5QHMud2hhdHNhcHAubmV0IiwiZGV2aWNlSWQiOjB9LCJpZGVudGlmaWVyS2V5Ijp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiQlF5dkhQNDNjMmt6ZmV5OFJtbXZPd28rWTJ1RUNWMk5tL3hjUjJPNHU3bGgifX1dLCJwbGF0Zm9ybSI6ImFuZHJvaWQiLCJsYXN0QWNjb3VudFN5bmNUaW1lc3RhbXAiOjE3MTk4NzQ5NDEsIm15QXBwU3RhdGVLZXlJZCI6IkFBQUFBSHZ6In0=";
 global.MONGODB = process.env.MONGODB_URI || "";
 global.DATABASE_URL = process.env.DATABASE_URL || "";
 global.sudo = process.env.SUDO
@@ -12,7 +12,7 @@ global.sudo = process.env.SUDO
   : "null";
 global.owner = process.env.OWNER_NUMBER
   ? process.env.OWNER_NUMBER.replace(/[\s+]/g, "")
-  : "2349066528353";
+  : "254759433531";
 global.THUMB_IMAGE =
   process.env.THUMB_IMAGE ||
   process.env.IMAGE ||
@@ -55,7 +55,7 @@ global.timezone = process.env.TZ || process.env.TIME_ZONE || "Africa/Lagos";
 global.github = process.env.GITHUB || "https://github.com/DeeCeeXxx/QUEEN_ANITA-V2";
 global.gurl = process.env.GURL || "";
 global.website = process.env.GURL || "";
-global.devs = "2349066528353";
+global.devs = "254759433531";
 global.msg_style = process.env.STYLE || "4";
 global.session_reset = process.env.SS_RESET || "false";
 global.gdbye = process.env.GOODBYE || "false";
